@@ -42,7 +42,6 @@
   activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt", stringsAsFactors = FALSE)
   
   # change the activity codes to human readable names
-    # activity_vector <- merged_activity[[1]]
   my_labels <- sapply(merged_activity[[1]], function(n) activity_labels[[n,2]])
   activities <- data.frame("activity" = character(10299), stringsAsFactors = FALSE)
   for(i in 1:nrow(merged_activity)){
