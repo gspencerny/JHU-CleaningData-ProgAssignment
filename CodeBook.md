@@ -13,7 +13,7 @@ The source data was normalized and bounded within [-1,1]. Acclelerometer variabl
 #### Preparing the Tidy Dataset
 The analysis requires that the `test` and `train` datasets be combined. The `X_test.txt` and `X_train.txt` data was combined using `rbind()` and the `colnames()` were applied from `features.txt`.
 
-The analysis is performed only on those source variables recording the mean and standard deviation for each measurement (detailed in the CodeBook, below). The relevant variables include 'mean' or 'sd' in their name so I used `grep()` to identify the target variables, which were `subset()` into a new `data.frame`.
+The analysis is performed only on those source variables recording the mean and standard deviation for each measurement (detailed in the CodeBook, below). The relevant variables include 'mean' or 'std' in their name so I used `grep()` to identify the target variables, which were `subset()` into a new `data.frame`.
 
 The `subject_test.txt` and `subject_train` data was combined using `rbind()` as before and given the column name, `subjects`. Similarly, the activity data from `y_test.txt` and `y_train.txt` was combined and given the column name `activity`.
 
