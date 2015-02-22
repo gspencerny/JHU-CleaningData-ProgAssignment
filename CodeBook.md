@@ -4,14 +4,14 @@ The `run_analysis.R` script performs an analysis on the Human Activity Recogniti
 The balance of this document assumes some familiarity with the source data, details of which can be found at: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 #### The Source Dataset
-The analysis requires that the `test` and `train` datasets be combined. Each dataset consists of a series of accelerometer and gyroscope measurements stored in `X_test.txt` and `X_train.txt`, the test subjects IDs that relate to each observation, stored in `subject_test.txt` and `subject_train.txt`, and the activity IDs that relate to the activity each subject performed during each observation, stored in `y_test.txt` and `y_train.txt`. 
+The source data consists of `test` and `train` datasets. Each dataset consists of a series of accelerometer and gyroscope measurements stored in `X_test.txt` and `X_train.txt`, the test subjects IDs that relate to each observation, stored in `subject_test.txt` and `subject_train.txt`, and the activity IDs that relate to the activity each subject performed during each observation, stored in `y_test.txt` and `y_train.txt`. 
 
 Variable names for the measurements are stored separately in `features.txt`. Activity labels are stored in `activity_labels.txt` with corresponding IDs.
 
 The source data was normalized and bounded within [-1,1]. Acclelerometer variable names include 'Acc' and are recorded in standard gravity units (g). Gyroscope variable names include 'Gyro' and the units are radians/second.
 
 #### Preparing the Tidy Dataset
-The `X_test.txt` and `X_train.txt` data was combined using `rbind()` and the `colnames()` were applied from `features.txt`.
+The analysis requires that the `test` and `train` datasets be combined. The `X_test.txt` and `X_train.txt` data was combined using `rbind()` and the `colnames()` were applied from `features.txt`.
 
 The analysis is performed only on those source variables recording the mean and standard deviation for each measurement (detailed in the CodeBook, below). The relevant variables include 'mean' or 'sd' in their name so I used `grep()` to identify the target variables, which were `subset()` into a new `data.frame`.
 
