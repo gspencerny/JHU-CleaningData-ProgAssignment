@@ -7,6 +7,10 @@
 ## CONTAINING ONLY THE MEAN/STDDEV VARIABLES.
 ################################################################
 
+  #load libraries
+  library(dplyr)
+  library(data.table)
+
   # load the sensor data (X_test, X_train) and merge into one data.frame
   test_sensor_data <- read.table("UCI HAR Dataset/test/X_test.txt", stringsAsFactors = FALSE)
   train_sensor_data <- read.table("UCI HAR Dataset/train/X_train.txt", stringsAsFactors = FALSE)
